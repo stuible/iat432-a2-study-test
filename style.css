@@ -1,0 +1,47 @@
+body {
+    background-color: #333;
+    color: white;
+}
+
+#main {
+    padding-top: 3em;
+    text-align: center;
+    --gsuiSlider-lineBgColor: #222;
+}
+
+.results {
+    text-align: left;
+}
+
+#task {
+    text-align: center;
+}
+
+#sliderWrapper {
+    display: inline-block;
+    padding: 2em;
+    margin-top: 3em;
+    text-align: center;
+    border: 1px solid white;
+}
+
+#sliderWrapper .slide-value {
+    color: white;
+    margin-top: 1em;
+    /* width: 5em; */
+}
+
+#sliderWrapper .gsuiSlider {
+    margin: 0 auto;
+    --gsuiSlider-lineColor: #88f;
+}
+
+#sliderWrapper .gsuiSlider.gsui-y {
+    width: 10px;
+    height: 250px;
+}
+
+#sliderWrapper .gsuiSlider.gsui-x {
+    width: 250px;
+    height: 10px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="gsuiSlider/gsuiSlider.css">
+    <link rel="stylesheet" href="style.css">
+    <title>GUI Test</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="task">
+            <h2>Target:</h2>
+            <h1 id="target">--</h1>
+        </div>
+        <div id="sliderWrapper"></div>
+    </div>
+
+    <div id="gsuiSlider-template" class="gsuiSlider">
+        <input type="range" />
+        <div class="gsui-line">
+            <div class="gsui-lineColor"></div>
+        </div>
+        <svg>
+            <circle class="gsui-svgLine" />
+            <circle class="gsui-svgLineColor" />
+        </svg>
+        <div class="gsui-eventCatcher"></div>
+    </div>
+
+    <script src="gsuiSlider/gsuiSlider.js"></script>
+</body>
+
+</html>
