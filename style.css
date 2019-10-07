@@ -17,12 +17,22 @@ body {
     text-align: center;
 }
 
+#target {
+    font-size: 4em;
+}
+
 #sliderWrapper {
     display: inline-block;
     padding: 2em;
     margin-top: 3em;
     text-align: center;
     border: 1px solid white;
+    transition: opacity 300ms linear;
+    opacity: 0;
+}
+
+#sliderWrapper.show {
+    opacity: 1;
 }
 
 #sliderWrapper .slide-value {

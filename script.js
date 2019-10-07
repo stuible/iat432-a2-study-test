@@ -1,5 +1,5 @@
 // Options
-const numberOfTests = 3;
+const numberOfTests = 50;
 
 const sliderRange = 100;
 
@@ -22,14 +22,20 @@ function generateTest() {
     targetNumber = Math.floor(Math.random() * sliderRange / 2) * 2;
     document.querySelector("#target").innerHTML = targetNumber;
 
-    const sliderTypes = [
-        "horizontal",
-        "verticle"
-    ];
+    //Wait 1 second before showingnew slider
+    setTimeout(() => {
 
-    let randomType = sliderTypes[Math.floor(Math.random() * sliderTypes.length)];
+        const sliderTypes = [
+            "horizontal",
+            "verticle"
+        ];
 
-    createSlider(randomType);
+        let randomType = sliderTypes[Math.floor(Math.random() * sliderTypes.length)];
+
+        createSlider(randomType);
+    }, 1000);
+
+
 }
 
 function createSlider(typeParam) {
@@ -48,6 +54,7 @@ function createSlider(typeParam) {
 
     document.querySelector("#sliderWrapper").append(slider.rootElement);
     document.querySelector("#sliderWrapper").append(sliderValue(10));
+    document.querySelector("#sliderWrapper").classList.add('show');
 
     slider.oninput = event => {
         document.querySelector(".slide-value").innerHTML = event;
@@ -67,7 +74,7 @@ function createSlider(typeParam) {
             console.log(`Time to use: ${time}ms`)
             recordTime(typeParam, time)
             currentTest++;
-            if(currentTest < numberOfTests ){
+            if (currentTest < numberOfTests) {
                 generateTest();
             }
             else {
@@ -95,13 +102,19 @@ function recordTime(type, time) {
 }
 
 function clearSliders() {
-    document.querySelector("#sliderWrapper").innerHTML = '';
+    document.querySelector("#sliderWrapper").classList.remove('show');
+    setTimeout(() => {
+        document.querySelector("#sliderWrapper").innerHTML = '';
+    }, 400);
+
 }
 
-function showResults(){
-    clearSliders();
+function showResults() {
+    document.querySelector("#sliderWrapper").innerHTML = '';
     const el = document.createElement('pre');
     el.classList += 'results';
     el.innerHTML = `${JSON.stringify(times, null, 2)}`;
     document.querySelector("#sliderWrapper").append(el);
+    document.querySelector("#sliderWrapper").classList.remove('add');
+    console.log(times);
 }
